@@ -16,7 +16,7 @@ function SectionTop() {
           perfeita entre conceitos inovadores e implementação prática que
           impulsiona o crescimento e o sucesso duradouro.
         </p>
-        <a href="tel:+5599982348021">
+        <a href="#fale-comigo">
           <Button>Entre em contato</Button>
         </a>
       </ContainerLeft>
