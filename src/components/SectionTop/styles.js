@@ -45,7 +45,6 @@ export const ContainerLeft = styled.div`
   p {
     color: #fff;
     margin: 40px 0;
-    text-align: justify;
     line-height: 25px;
     font-size: 20px;
   }

@@ -41,7 +41,6 @@ export const ContainerText = styled.div`
   p {
     color: #fff;
     margin: 10px 0;
-    text-align: justify;
     line-height: 25px;
     font-size: 20px;
   }

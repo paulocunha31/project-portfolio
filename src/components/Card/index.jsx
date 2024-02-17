@@ -1,11 +1,28 @@
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import Project1 from '../../assets/projeto1.png'
 import Project2 from '../../assets/projeto2.png'
 import Project3 from '../../assets/projeto3.png'
-import { Container, ContainerImg } from './styles'
+import { Container, ContainerImg, ContainerOverlay } from './styles'
 
 function Card() {
+  const [visibleOverlay, setVisibleOverlay] = useState(false)
+  const divRef = useRef(null)
+
+  window.onscroll = () => {
+    const pontoEspecifico = divRef.current
+    const { top } = pontoEspecifico.getBoundingClientRect()
+    const isVisible = top >= 0 && top <= window.pageYOffset
+
+    if (!visibleOverlay && isVisible) {
+      setVisibleOverlay(true)
+    }
+    if (visibleOverlay && !isVisible) {
+      setVisibleOverlay(false)
+    }
+  }
+
   const images = [
     {
       name: 'Conversor de Moedas',
@@ -29,11 +46,13 @@ function Card() {
   ]
 
   return (
-    <Container $img>
+    <Container>
       {images.map((item, index) => (
         <Link key={index} to={`/projeto/${index + 1}`} state={item}>
-          <ContainerImg className="teste" $img={item.src}>
-            <div className="overlay">{item.name}</div>
+          <ContainerImg $visibleOverlay={visibleOverlay} $img={item.src}>
+            <ContainerOverlay $visibleOverlay={visibleOverlay} ref={divRef}>
+              {item.name}
+            </ContainerOverlay>
           </ContainerImg>
         </Link>
       ))}
