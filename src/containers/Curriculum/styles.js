@@ -6,21 +6,8 @@ import breakpoints from '../../styles/breakpoints'
 
 export const Container = styled.div`
   padding: 20px 4%;
-  width: 100vw;
-  height: 100vh;
-
-  div {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    embed {
-      width: 80%;
-      height: 80%;
-    }
-  }
+  display: flex;
+  justify-content: space-between;
 `
 export const Button = styled(Link)`
   color: #00ff00;

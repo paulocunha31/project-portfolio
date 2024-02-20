@@ -1,19 +1,19 @@
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 
-import Curriculo from '../../assets/curriculo.pdf'
+import PdfViewer from '../../components/PdfViewer'
 import { Container, Button } from './styles'
 
 function Curriculum() {
   return (
-    <Container>
-      <Button to={'/'}>
-        <BsFillArrowLeftCircleFill />
-      </Button>
+    <>
+      <Container>
+        <Button to={'/'}>
+          <BsFillArrowLeftCircleFill />
+        </Button>
+      </Container>
 
-      <div>
-        <embed src={Curriculo} type="application/pdf" />
-      </div>
-    </Container>
+      <PdfViewer />
+    </>
   )
 }
 
